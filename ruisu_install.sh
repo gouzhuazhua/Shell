@@ -11,11 +11,13 @@ echo -e "\n--------- 锐速安装完成 ---------"
 
 
 echo -e "\n--------- 开启防火墙端口 ---------"
-firewalld-cmd --zone=public --add-port=8388/tcp --permanent
+firewall-cmd --zone=public --add-port=8388/tcp --permanent
 firewall-cmd --zone=public --add-port=8388/tcp --permanent
 firewall-cmd --zone=public --add-port=8389/tcp --permanent
 firewall-cmd --zone=public --add-port=8390/tcp --permanent
 firewall-cmd --zone=public --add-port=8391/tcp --permanent
+echo -e "\n--------- 重启防火墙 ---------"
+firewall-cmd --reload
 echo -e "\n--------- 防火墙端口开启成功 ---------"
 
 
@@ -29,4 +31,5 @@ echo -e "\n--------- ShadowSocks系统服务启动成功 ---------"
 echo -e "\n--------- ShadowSocks安装完成！ ---------"
 echo -e "\n-ShadowSocks配置文件目录：/etc/shadowsocks.json"
 echo -e "\n-ShadowSocks使用命令：systemctl start/stop/restart/status ssserver"
+cat /etc/shadowsocks.json
 echo -e "\n---------------- end -------------------"
