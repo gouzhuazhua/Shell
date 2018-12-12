@@ -39,7 +39,7 @@ echo -e "\n--------- 创建ShadowSocks配置文件 ---------"
 sudo touch /etc/shadowsocks.json
 sudo cat <<EOF >/etc/shadowsocks.json
 {
-"server": "45.77.5.105",
+"server": "update_ip_here",
 "port_password": {
 "8388": "update_password_here",
 "8389": "update_password_here",
@@ -56,7 +56,7 @@ echo -e "\n--------- ShadowSocks配置文件创建完成 ---------"
 
 echo -e "\n--------- 创建ShadowSocks系统服务 ---------"
 sudo touch /etc/systemd/system/ssserver.service
-sudo cat <<EOF >/etc/shadowsocks.json
+sudo cat <<EOF >/etc/systemd/system/ssserver.service
 [Unit]
 Description=ssserver
 [Service]
